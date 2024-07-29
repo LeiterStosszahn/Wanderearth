@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>提交工单</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="images/ico.ico" rel="shortcut icon">
+    <style type="text/css">
+    	body{ text-align: center; }
+    	h2{ margin-top: 20px; }
+    </style>
+    <script language="javascript">
+    function getParam(paramName) {  
+        paramValue = "", isFound = !1;  
+        if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {  
+            arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0;  
+            while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++  
+        }  
+        return paramValue == "" && (paramValue = null), paramValue;
+    } 
+    function utf8to16(str) {
+	    var out, i, len, c;
+	    var char2, char3;
+	    out = "";
+	    len = str.length;
+	    i = 0;
+	    while(i < len) {
+		    c = str.charCodeAt(i++);
+	    	switch(c >> 4){
+		    	case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
+		    	out += str.charAt(i-1);
+		    	break;
+			    case 12: case 13:
+			    char2 = str.charCodeAt(i++);
+			    out += String.fromCharCode(((c & 0x1F) << 6) | (char2 & 0x3F));
+			    break;
+			    case 14:
+			    char2 = str.charCodeAt(i++);
+			    char3 = str.charCodeAt(i++);
+			    out += String.fromCharCode(((c & 0x0F) << 12) |
+				    ((char2 & 0x3F) << 6) |
+				    ((char3 & 0x3F) << 0));
+			    break;
+		    }
+	    }
+	    return out;
+    }
+    </script>
+    <!--检查表单-->
+    <script language="javascript">
+        function chack(){ 
+        	if(document.form1.nname.value==0) { 
+         		alert("姓名不能为空！");
+         		return 0;
+        	} else if(document.form1.ad.value==0){
+       	        alert("地址不能为空！");
+             	return 0;
+            } else if(document.form1.num.value==0){
+       	    	alert("手机号码不能为空！");
+             	return 0;
+            } else if(document.form1.invit.value==0){
+       	    	alert("邀请码不能为空！");
+             	return 0;
+			} else if(document.form1.other.value==0){
+       	    	alert("QQ（微信）不能为空！");
+             	return 0;
+        	} else {
+             	document.form1.action="insert.php";
+                document.form1.submit();
+            }
+        }
+        </script>
+</head>
+<body>
+	<h2>提交工单</h2>
+	<hr>
+	<form method="post" name="form1">
+		<div style="border-style: solid;">
+	        <h3>请检查已有信息</h3>
+	            <table align="center" style="text-align: left;">
+	            	<tr>
+	            		<td width="125px" height="50px">姓：</td>
+		                <td width="200px" height="50px"><input id="secondname" name="secondname" ="secondname" type="text" readonly="readonly"></td>
+		                <td width="125px" height="50px">名：</td>
+		                <td width="200px" height="50px"><input id="firstname" name="firstname" type="text" readonly="readonly"></td>
+		           </tr>
+		           <tr>
+		                <td width="125px" height="50px">Second Name：</td>
+		                <td width="200px" height="50px"><input id="esecondname" name="esecondname" type="text" readonly="readonly"></td>
+		                <td width="125px" height="50px">First Name：</td>
+		                <td width="200px" height="50px"><input id="efirstname" name="efirstname" type="text" readonly="readonly"></td>
+		            </tr>
+		            <tr>
+		                <td width="125px" height="50px">识别编码：</td>
+		                <td width="200px" height="50px"><input id="CNG" name="CNG" type="text" readonly="readonly"></td>
+		                <td width="125px" height="50px">通讯编码：</td>
+		                <td width="200px" height="50px"><input id="ncode" name="ncode" type="int" readonly="readonly"></td>
+		            </tr>
+		            <tr>
+		           	    <td width="125px" height="50px">胸牌方案:</td>
+		           	    <td><input id="tagtype" name="tagtype" type="text" readonly="readonly"></td>
+		            </tr>
+		            <tr>
+		                <td width="125px" height="50px">职位中文名：</td>
+		                <td width="200px" height="50px"><input id="jobc" name="jobc" type="text" readonly="readonly" placeholder="选择方案一此项为空"></td>
+		                <td width="125px" height="50px">职位英文名：</td>
+		                <td width="200px" height="50px"><input id="jobe" name="jobe" type="text" readonly="readonly" placeholder="选择方案一此项为空"></td>
+		            </tr>
+		        </table>
+		    <!--js填写表单-->
+	        <script type="text/javascript">
+	    	     document.getElementById('secondname').value=utf8to16(unescape(getParam("secondname")));
+	    	     document.getElementById('firstname').value=utf8to16(unescape(getParam("firstname")));
+	        	 document.getElementById('esecondname').value=getParam("esecondname");
+	    	     document.getElementById('efirstname').value=getParam("efirstname");
+	    	     document.getElementById('CNG').value=getParam("CNG");
+	    	     document.getElementById('ncode').value=getParam("ncode");
+	    	     //判断是否有方案二
+	    	     if(getParam("tagtype2")){
+	    	     	document.getElementById('jobc').value=utf8to16(unescape(getParam("jobc")));
+	    	     	//转换英文空格
+	    	     	var joben = getParam("jobe");
+			        var reggg = joben.split("+");
+			        var jobre = reggg.join(" ");
+	    	     	document.getElementById('jobe').value=jobre;
+	    	     }
+	    	     //根据方案填表单
+	    	     if(getParam("tagtype0") && !getParam("tagtype1") && !getParam("tagtype2")){
+	    	        document.getElementById('tagtype').value="狗牌";
+	    	     } else if(!getParam("tagtype0") && getParam("tagtype1") && !getParam("tagtype2")) {
+	    	     	document.getElementById('tagtype').value="胸牌方案一";
+	    	     } else if(!getParam("tagtype0") && !getParam("tagtype1") && getParam("tagtype2"))  {
+	    	     	document.getElementById('tagtype').value="胸牌方案二";
+	    	     } else if(getParam("tagtype0") && getParam("tagtype1") && !getParam("tagtype2")) {
+	    	     	document.getElementById('tagtype').value="狗牌+胸牌方案一";
+	    	     } else if(getParam("tagtype0") && !getParam("tagtype1") && getParam("tagtype2")) {
+	    	     	document.getElementById('tagtype').value="狗牌+胸牌方案二";
+	    	     } else if(!getParam("tagtype0") && getParam("tagtype1") && getParam("tagtype2")) {
+	    	     	document.getElementById('tagtype').value="胸牌方案一+胸牌方案二";
+	    	     } else if(getParam("tagtype0") && getParam("tagtype1") && getParam("tagtype2")) {
+	    	     	document.getElementById('tagtype').value="狗牌+胸牌方案一+胸牌方案二";
+	    	     }
+	        </script>
+	    </div>
+		<br>
+		<h3>请输入邮寄信息</h3>
+		<table align="center" style="text-align: left;">
+	        <tr>
+	            <td width="125" height="50px">姓名：</td>
+		        <td width="200" height="50px"><input id="nname" name="nname"  maxlength="10" type="text"></td>
+		        <td width="125" height="50px">地址：</td>
+		        <td width="200" height="50px"><input id="ad" name="ad"  maxlength="50" type="text"></td>
+		    </tr>
+	        <tr>
+                <td width="125" height="50px">手机号码：</td>
+                <td width="200" height="50px"><input id="num" name="num" maxlength="11" type="text" oninput="value=value.replace(/[^\d]/g,'')"></td>
+                <td width="125" height="50px">电子邮箱：<br>（如需回执）</td>
+                <td width="200" height="50px"><input id="email" name="email" maxlength="30" type="text"></td>
+            </tr>
+	        <tr>
+           	    <td width="125" height="50px">QQ或微信：</td>
+                <td width="200" height="50px"><input id="other" name="other" maxlength="50" type="text"></td>
+                <td width="125" height="50px">邀请码：</td>
+                <td width="200" height="50px"><input id="invit" name="invit" maxlength="50" type="text"></td>
+            </tr>
+	        </table>
+		<div>
+		    <p style="color: red">胸牌价格：20元，狗牌价格待定<br>胸牌报名截止日期下周四（2019.3.7），狗牌待定。<br>转账时请备注姓名和联系方式,如有其他需求请联系QQ2633599738</p>
+			<p>
+				<img src="images/alipayred.png" height="260">&emsp;&emsp;<img src="images/alipay.png" height="260">&emsp;&emsp;<img src="images/wecheatpay.png" height="260">
+			</p>
+		</div>
+		<input type="button" value="确认提交" onclick="chack()"/>&emsp;&emsp;
+		<input type="button" value="返回修改" onclick="window.opener=null;window.open('','_self');window.close();"/>
+    </form>
+</body>
+</html>

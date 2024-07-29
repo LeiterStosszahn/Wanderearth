@@ -1,0 +1,217 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>流浪球球</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link href="images/ico.ico" rel="shortcut icon">
+        <script language="javascript">
+            function chack(){ 
+            	if(document.form1.secondname.value==0) { 
+         			alert("姓不能为空！");
+         			return 0; 
+         		}
+         		if(document.form1.firstname.value==0) { 
+         			alert("名不能为空！");
+         			return 0; 
+         		}
+         		if(document.form1.firstname.value.length+document.form1.firstname.value.length>5) { 
+         			alert("姓名最多5个中文字符！");
+         			return 0; 
+         		}
+         		if(document.form1.esecondname.value==0) { 
+         			alert("Second Name不能为空！");
+         			return 0; 
+         		}
+         		if(document.form1.efirstname.value==0) { 
+         			alert("First Name不能为空！");
+         			return 0; 
+         		}
+         		if(document.form1.esecondname.value.length+document.form1.efirstname.value.length>20) { 
+         			alert("英文名最多20个英文字符！");
+         			return 0; 
+         		}
+         		if(document.form1.CNG.value==0 || document.form1.CNG.value.length != 4) { 
+         			alert("识别编码必须为4位字母或数字组合");
+         			return 0; 
+         		}
+         		if(document.form1.ncode.value=="" || document.form1.ncode.value.length != 12) { 
+         			alert("识别编码必须为12位数字！");
+         			return 0; 
+         		}
+         		if(document.form1.tagtype0.checked==0 && document.form1.tagtype1.checked==0 && document.form1.tagtype2.checked==0) { 
+         			alert("请选择方案！");
+         			return 0; 
+         		}
+         		if(document.form1.tagtype2.checked==1 && document.form1.jobc.value.length==0) { 
+         			alert("必须输入中文职位！");
+         			return 0; 
+         		}
+         		if(document.form1.tagtype2.checked==1 && document.form1.jobe.value.length==0) { 
+         			alert("必须输入英文职位！");
+         			return 0; 
+         		}
+         	}
+         	function dogtag(){ 
+         		if(chack()==0){return;}
+                document.form1.action="dogtag.html";
+                document.form1.submit();
+            }
+            function tag(){
+            	if(chack()==0){return;}
+                document.form1.action="tag.html";
+                document.form1.submit();
+            }
+            function tag2(){
+            	if(chack()==0){return;}
+                document.form1.action="tag2.html";
+                document.form1.submit();
+            }
+            function up(){
+            	if(chack()==0){return;}
+                document.form1.action="submit.html";
+                document.form1.submit();
+            }
+        </script>
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script> 
+        <script type="text/javascript">
+            function TestFun()
+            {
+                ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻ //*´∇｀*/ ['_']; o=(ﾟｰﾟ) =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);(ﾟДﾟ)={ﾟΘﾟ: '_' ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +'_') [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ '_')[o^_^o -(ﾟΘﾟ)] ,ﾟДﾟﾉ:((ﾟｰﾟ==3) +'_')[ﾟｰﾟ] }; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +'_') [c^_^o];(ﾟДﾟ) ['c'] = ((ﾟДﾟ)+'_') [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) ['o'] = ((ﾟДﾟ)+'_') [ﾟΘﾟ];(ﾟoﾟ)=(ﾟДﾟ) ['c']+(ﾟДﾟ) ['o']+(ﾟωﾟﾉ +'_')[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +'_') [ﾟｰﾟ] + ((ﾟДﾟ) +'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) ['c']+((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) ['o']+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ];(ﾟДﾟ) ['_'] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)=((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+'_') [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +'_') [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟωﾟﾉ +'_') [ﾟΘﾟ]; (ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]='\\'; (ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];(oﾟｰﾟo)=(ﾟωﾟﾉ +'_')[c^_^o];(ﾟДﾟ) [ﾟoﾟ]='\"';(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (ﾟεﾟ+(ﾟДﾟ)[ﾟoﾟ]+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ (c^_^o)+ (c^_^o)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ) .ﾟДﾟﾉ+ (c^_^o)+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ (ﾟДﾟ) [ﾟΘﾟ]+ (ﾟДﾟ) [ﾟΘﾟ]+ (c^_^o)+ (ﾟДﾟ) ['c']+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ (ﾟДﾟ) [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟｰﾟﾉ+ ((ﾟｰﾟ) + (ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ (ﾟｰﾟ)+ (ﾟДﾟ) .ﾟДﾟﾉ+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ) .ﾟωﾟﾉ+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ ((o^_^o) - (ﾟΘﾟ))+ ((ﾟｰﾟ) + (ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ) [ﾟΘﾟ]+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ (c^_^o)+ (ﾟДﾟ) [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟｰﾟﾉ+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (o^_^o))+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (o^_^o)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ (ﾟｰﾟ)+ (ﾟДﾟ) .ﾟДﾟﾉ+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ (ﾟДﾟ) .ﾟДﾟﾉ+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((o^_^o) +(o^_^o))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟΘﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ (c^_^o)+ (ﾟДﾟ) [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟｰﾟﾉ+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ ((o^_^o) - (ﾟΘﾟ))+ ((ﾟｰﾟ) + (ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ) .ﾟΘﾟﾉ+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ (ﾟｰﾟ)+ (ﾟДﾟ) .ﾟДﾟﾉ+ (c^_^o)+ (ﾟДﾟ) .ﾟｰﾟﾉ+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ (ﾟДﾟ) .ﾟｰﾟﾉ+ (ﾟДﾟ) .ﾟΘﾟﾉ+ (o^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ (ﾟДﾟ) [ﾟΘﾟ]+ (ﾟДﾟ) [ﾟΘﾟ]+ (c^_^o)+ (ﾟДﾟ) ['c']+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((o^_^o) +(o^_^o))+ ((o^_^o) +(o^_^o))+ ((ﾟｰﾟ) + (ﾟｰﾟ))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((o^_^o) +(o^_^o))+ ((ﾟｰﾟ) + (o^_^o))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ) .ﾟωﾟﾉ+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ) [ﾟΘﾟ]+ (c^_^o)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(oﾟｰﾟo)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (o^_^o)+ (ﾟДﾟ) .ﾟｰﾟﾉ+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ ((o^_^o) +(o^_^o))+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ ((o^_^o) +(o^_^o))+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ ((o^_^o) +(o^_^o))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (c^_^o)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟoﾟ]) (ﾟΘﾟ)) ('_');
+            }
+        </script>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1><a href="javascript:TestFun()">流浪球球</a></h1>
+							<p class="major">
+								小破球冲鸭！
+							</p>
+							<ul class="actions vertical">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">实物预览</a></li>
+							</ul>
+						</div>
+						<div class="image" id="rdimg"><img src="images/background.jpg"></div>
+					</section>
+				<!-- 输入信息 -->
+					<section class="wrapper style1 align-center" id="first">
+						<div class="inner medium">
+							<h2>实物预览</h2>
+							<span>(字数超出会造成预览图异常，详情以后续订单确认为准)</span>
+							<form method="get" name="form1" enctype="multipart/form-data" target="_blank">
+								<div class="field half first">
+									<label for="name">姓</label>
+									<input type="text" name="secondname" maxlength="5" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" placeholder="姓名最多5个中文字符">
+								</div>
+								<div class="field half">
+									<label for="email">名</label>
+									<input type="text" name="firstname" maxlength="5" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" placeholder="姓名最多5个中文字符">
+								</div>
+								<div class="field half first">
+									<label for="name">Second Name</label>
+									<input type="text" name="esecondname" maxlength="20" oninput="value=value.replace(/[^a-zA-Z]/g,'')" placeholder="英文名最多20个英文字符">
+								</div>
+								<div class="field half">
+									<label for="email">First Name</label>
+									<input type="text" name="efirstname" maxlength="20" oninput="value=value.replace(/[^a-zA-Z]/g,'')" placeholder="英文名最多20个英文字符">
+								</div>
+								<div class="field half first">
+									<label for="message">识别编码（4位，默认为CNG1，可修改）</label>
+									<input name="CNG" type="text" value="CNG1" placeholder="CNG1" maxlength="4" oninput="value=value.replace(/[\W]/g,'')">
+								</div>
+								<div class="field half">
+									<label for="message">通讯编码（12位）</label>
+									<input name="ncode" type="text" maxlength="12" oninput="value=value.replace(/[^\d]/g,'')" placeholder="通讯编码必须为12位数字">
+								</div>
+								<div class="field half first">
+									<label for="message">请选择方案（可多选）：</label>
+                                </div>
+                                <div class="field half gallery lightbox">
+									<label for="message">
+										<input name="tagtype0" type="checkbox" value="tag0" onclick="checkbox0nclick(this)"/><a href="/images/dogtag.png" class="image">狗牌</a>&emsp;&emsp;&emsp;
+										<input name="tagtype1" type="checkbox" value="tag1" onclick="checkbox1nclick(this)"/><a href="/images/tag1.png" class="image">胸牌方案一</a>&emsp;&emsp;&emsp;
+										<input name="tagtype2" type="checkbox" value="tag2" onclick="checkboxOnclick(this)"/><a href="/images/tag2.png" class="image">胸牌方案二</a>
+										<!--增加首字母大写功能-->
+									</label>
+                                </div>
+                                <script type="text/javascript">
+                                	function checkboxOnclick(checkbox){
+                                		if ( checkbox.checked == true){
+                                			$("#tag2inf1").css("display","block");
+                                			$("#tag2inf2").css("display","block");
+                                			$("#seetag2").css("display","block");
+                                		} else {
+                                			$("#tag2inf1").css("display","none");
+                                			$("#tag2inf2").css("display","none");
+                                			$("#seetag2").css("display","none");
+                                		}
+                                	}
+                                	function checkbox1nclick(checkbox){
+                                		if ( checkbox.checked == true){
+                                			$("#seetag").css("display","block");
+                                		} else {
+                                			$("#seetag").css("display","none");
+                                		}
+                                	}
+                                	function checkbox0nclick(checkbox){
+                                		if ( checkbox.checked == true){
+                                			$("#seedogtag").css("display","block");
+                                		} else {
+                                			$("#seedogtag").css("display","none");
+                                		}
+                                	}
+                                </script>
+                                <div class="field half first" id="tag2inf1" style="display:none;">
+                                	<label for="name">职位中文名</label>
+									<input type="text" name="jobc" maxlength="8" oninput="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" placeholder="职位最多8个中文字符">
+                                </div>
+                                <div class="field half " id="tag2inf2" style="display:none;">
+                                	<label for="name">职位英文名</label>
+									<input type="text" name="jobe" maxlength="37" oninput="value=value.replace(/[^[a-zA-Z\s]+$/,'')" placeholder="职位最多37个英文字符">
+                                </div>
+								<ul class="actions">
+									<li><div id="seedogtag" style="display:none;"><input type="button" value="查看狗牌" onclick="dogtag();"/></div></li>
+									<li><div id="seetag" style="display:none;"><input type="button" value="查看胸牌方案一" onclick="tag();"/></div></li>
+									<li><div id="seetag2" style="display:none;"><input type="button" value="查看胸牌方案二" onclick="tag2();"/></div></li>
+									<li><input type="button" value="提交" onclick="up();"/></li>
+								</ul>
+							</form>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+							    <li><a href="#" class="icon style2 fa-home"><span class="label">返回首页</span></a></li>
+							</ul>
+							<p>
+							    <!--<a href="http://www.miitbeian.gov.cn/">鄂ICP备18000370号</a><br>-->
+							    &copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
+							</p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
